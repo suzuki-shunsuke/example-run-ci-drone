@@ -1,8 +1,6 @@
 ---
 kind: pipeline
 name: build
-clone:
-  depth: 1
 volumes:
   - name: gopath
     temp: {}
