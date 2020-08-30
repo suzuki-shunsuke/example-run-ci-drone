@@ -17,3 +17,8 @@ steps:
       GITHUB_TOKEN:
         from_secret: github_token
       GITHUB_COMMENT_SKIP_NO_TOKEN: "true"
+trigger:
+  event:
+    exclude:
+      # CI Skipping doesn't work if the event type is pull request
+      - pull_request
