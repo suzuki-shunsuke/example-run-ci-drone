@@ -1,0 +1,3 @@
+---
+expr: |
+  "ignore-run-ci" not in util.labelNames(pr.labels) && pr.user.login != "renovate[bot]"

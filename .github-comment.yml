@@ -1,0 +1,28 @@
+---
+# https://github.com/suzuki-shunsuke/github-comment
+templates:
+  header: '[build]({{Env "DRONE_BUILD_LINK"}})'
+  exit_code: ':{{if eq .ExitCode 0}}white_check_mark{{else}}x{{end}}: Exit Code {{.ExitCode}}'
+  join_command: |
+    ```
+    $ {{.JoinCommand}}
+    ```
+  hidden_combined_output: |
+    <details>
+
+    <pre><code>{{.CombinedOutput}}</code></pre>
+
+    </details>
+  exec_default: |
+    {{template "header" .}}
+
+    {{template "exit_code" .}}
+
+    {{template "join_command" .}}
+
+    {{template "hidden_combined_output" .}}
+exec:
+  default:
+  - when: ExitCode != 0
+    template: |
+      {{template "exec_default" .}}
