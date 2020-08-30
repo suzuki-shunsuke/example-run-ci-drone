@@ -1,0 +1,19 @@
+---
+kind: pipeline
+name: build
+volumes:
+  - name: gopath
+    temp: {}
+steps:
+  - name: build
+    image: plugins/git
+    commands:
+      - apk add bash
+      - bash ci/install-tools.sh
+      - bash ci/update-pr.sh
+      - bash ci/merge-master.sh
+      - bash ci/hello.sh
+    environment:
+      GITHUB_TOKEN:
+        from_secret: github_token
+      GITHUB_COMMENT_SKIP_NO_TOKEN: "true"

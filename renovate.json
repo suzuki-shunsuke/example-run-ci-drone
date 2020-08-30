@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["ci/install-tools\\.sh"],
+      "matchStrings": ["CLAP_VERSION=(?<currentValue>.*?)\\n"],
+      "depNameTemplate": "suzuki-shunsuke/clap",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "fileMatch": ["ci/install-tools\\.sh"],
+      "matchStrings": ["GITHUB_COMMENT_VERSION=(?<currentValue>.*?)\\n"],
+      "depNameTemplate": "suzuki-shunsuke/github-comment",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}
