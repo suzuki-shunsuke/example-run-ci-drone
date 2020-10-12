@@ -4,7 +4,7 @@ set -eu
 
 cd "$(dirname "$0")/.."
 
-CLAP_VERSION=v0.2.2
+CLAP_VERSION=v1.0.0
 GITHUB_COMMENT_VERSION=v1.9.0
 # RUN_CI_VERSION=v0.1.0-0
 
