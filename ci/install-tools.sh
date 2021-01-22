@@ -5,7 +5,7 @@ set -eu
 cd "$(dirname "$0")/.."
 
 CLAP_VERSION=v0.2.2
-GITHUB_COMMENT_VERSION=v1.9.0
+GITHUB_COMMENT_VERSION=v2.2.0
 # RUN_CI_VERSION=v0.1.0-0
 
 curl --fail -L -o /usr/local/bin/clap https://github.com/suzuki-shunsuke/clap/releases/download/${CLAP_VERSION}/clap_${CLAP_VERSION##v}_linux_amd64
